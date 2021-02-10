@@ -6,6 +6,11 @@ const connect = function() {
     host: '135.23.222.131',
     port: 50542
   });
+  conn.on('connect', () => {
+    console.log('Successfully connected to game server');
+    conn.write('Name: KJD');
+  });
+
   conn.on('data', () => {
     console.log('you ded cuz you idled');
   });
